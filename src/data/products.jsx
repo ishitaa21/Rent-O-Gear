@@ -198,15 +198,10 @@ export const products = [
       {
         id: "601",
         image: "/product/camera/camera1.jpeg",
-        brand: "Steelbird",
+        brand: "Gopro Hero 12",
         
       },
-      {
-        id: "602",
-        image: "/product/camera/camera2.jpeg",
-        brand: "Steelbird",
-        
-      }, 
+       
     ],
   },
 

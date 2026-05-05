@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <div className="  min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black to-gray-900 ">
        
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-        From Adda to Adventure(add appt tagline)
+        From Adda to <span className="text-green-400"> Adventure </span>
       </h1>
+      <h2 className="text-3xl md:text-3xl font-bold tracking-tight mt-4"> With Rent <u>O</u> Gear</h2>
 
       <p className="text-gray-400 mt-4 text-3xl">
         Rent riding & travel gear in Kolkata
@@ -12,23 +15,26 @@ const Hero = () => {
       
 
 <p className="text-gray-400 mt-4 text-lg">
-  Helmets, Jackets, GoPro & Trekking Gear on Rent
+  Riding Gears, GoPro & Trekking Gear on Rent
 </p>
 
       <div className="mt-8 flex justify-center gap-4 flex-wrap">
-        <a
+       {/* <a
           href="#products" onClick={() => setMenuOpen(false)}
           className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold"
         >
           Explore Gear
-        </a>
-
+        </a>  */}
+        <Link title="Gear" to="/products" className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold"> Explore Gear </Link>
+{/*
         <a
-          href="https://wa.me/9123894013"
+          href="https://wa.me/919123894013"
           className="border border-yellow-400 px-6 py-3 rounded-lg"
         >
           WhatsApp
         </a>
+*/}
+        <Link title="Contact" to="contact" className="border border-yellow-400 px-6 py-3 rounded-lg"> Contact Us </Link>
       </div>
     </div>
   );

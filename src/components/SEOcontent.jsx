@@ -6,7 +6,7 @@ const SEOContent = () => {
       </h2>
 
       <p>
-        Rent O Gear provides high-quality riding gear in Kolkata including helmets,
+        Rent O Gear provides high-quality riding gear in Kolkata including helmets, riding gears
         riding jackets, GoPro cameras, and trekking equipment. Whether you are planning
         a weekend ride or a long trip, we offer affordable rental options with easy
         booking via WhatsApp and call support.

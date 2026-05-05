@@ -19,5 +19,15 @@ export const reviews = [
     name: "sayan",
     text: "abcd....",
   },
+  {
+    id: 5,
+    name: "sayan",
+    text: "abcd....",
+  },
+  {
+    id: 6,
+    name: "sayan",
+    text: "abcd....",
+  },
 
 ];
