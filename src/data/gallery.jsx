@@ -11,21 +11,6 @@ export const gallery = [
     id: 3,
     image: "/trips/trip3.jpeg",
   },
-  {
-    id: 2,
-    image: "/trips/trip2.jpeg",
-  },
-  {
-    id: 2,
-    image: "/trips/trip2.jpeg",
-  },
-  {
-    id: 3,
-    image: "/trips/trip3.jpeg",
-  },
-  {
-    id: 2,
-    image: "/trips/trip2.jpeg",
-  },
+  
   
 ];
