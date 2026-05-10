@@ -65,12 +65,7 @@ const Navbar = () => {
           
           <Link title="Gallery" to="/gallery" className="hover:text-yellow-400">Gallery</Link>
 
-          <a
-            href="https://wa.me/919123894013"
-            className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold text-center"
-          >
-            Book Now
-          </a>
+          
         </div>
       )}
     </div>

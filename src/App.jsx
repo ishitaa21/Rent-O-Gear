@@ -31,7 +31,7 @@ function App() {
               <Products />
               <Gallery />
               <ReviewTabs />
-              <SEOContent />
+              
             </>
           } />
 
@@ -45,6 +45,7 @@ function App() {
 
         {/* This stays outside because you want it on every page */}
         <FloatingButtons />
+        <SEOContent />
       </div>
     </Router>
   );

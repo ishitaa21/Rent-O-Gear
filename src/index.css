@@ -5,3 +5,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* index.css */
+body {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}

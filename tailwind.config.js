@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: { // <--- Everything must be inside here
       animation: {
-        marquee: "marquee 25s linear infinite",
+        marquee: "marquee 50s linear infinite",
       },
       keyframes: {
         marquee: {

@@ -18,7 +18,7 @@ const Gallery = () => {
     <div id="gallery" className="py-16 px-6 bg-black text-white text-center">
       
       <h2 className="text-3xl font-bold mb-10">
-        Trips Powered by Rent <u>O</u> Gear
+        Trips Powered by <span className="text-yellow-400">Rent <u>O</u> Gear </span> 
       </h2>
 
       <div className="relative flex items-center justify-center">

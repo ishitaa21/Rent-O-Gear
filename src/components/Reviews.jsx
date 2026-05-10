@@ -16,11 +16,15 @@ const Reviews = () => {
         {/* The Animated Container */}
         <div className="flex animate-marquee whitespace-nowrap gap-6 hover:[animation-play-state:paused]">
           {doubledReviews.map((item, index) => (
-            // We use index because IDs are now duplicated
-            <div key={index} className="w-[300 md:w-[400px] flex-shrink-0">
-              <ReviewCard review={item} />
-            </div>
-          ))}
+  // Changed w-[300px] to w-[80vw] for mobile
+  // Added min-h-[200px] to ensure cards don't collapse
+  <div 
+    key={index} 
+    className="w-[85vw] md:w-[400px] flex-shrink-0 whitespace-normal"
+  >
+    <ReviewCard review={item} />
+  </div>
+))}
         </div>
       </div>
     </div>

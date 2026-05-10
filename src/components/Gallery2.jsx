@@ -3,7 +3,7 @@ import { gallery } from "../data/gallery";
 const Gallery2 = () => {
   return (
     <div id="gallery" className="py-16 px-6 bg-black text-white text-center">
-  <h2 className="text-3xl font-bold mb-10">Trips Powered by Rent <u>O</u> Gear</h2>
+  <h2 className="text-3xl font-bold mb-10">Trips Powered by <span className="text-yellow-400">Rent <u>O</u> Gear </span> </h2>
 
   {/* Pinterest Column Container */}
   <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 max-w-6xl mx-auto">

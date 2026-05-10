@@ -1,12 +1,12 @@
 const ReviewCard = ({ review }) => {
   return (
-    // Added whitespace-normal so the text inside the card still wraps properly
-    <div className="bg-gray-900 p-6 rounded-xl shadow-md border border-gray-800 h-full whitespace-normal">
-      <p className="text-gray-300 mb-4 italic">“{review.text}”</p>
+    <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 h-full flex flex-col justify-between">
+      {/* whitespace-normal ensures the text wraps like a paragraph */}
+      <p className="text-gray-300 mb-4 italic whitespace-normal leading-relaxed text-sm md:text-base">
+        “{review.text}”
+      </p>
       <h3 className="text-yellow-400 font-semibold">— {review.name}</h3>
-      
     </div>
-    
   );
 };
 
