@@ -25,7 +25,7 @@ const SEOContent = () => {
       ]
     },
     {
-      title: "Ride Destiations",
+      title: "Ride Destinations",
       links: [
         { name: "Kolkata to Digha", path: "/work" },
         { name: "Kolkata to Guwahati", path: "/work" },
