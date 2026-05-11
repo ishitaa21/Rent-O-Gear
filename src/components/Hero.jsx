@@ -108,7 +108,7 @@ const Hero = () => {
 
       {/* --- SCROLLING MARQUEE --- */}
       {/* CHANGE: Changed bottom-4 to bottom-0 on mobile to pull it up as much as possible */}
-      <div className="absolute bottom-2 md:bottom-10 left-0 w-full overflow-hidden bg-black/50 py-4 border-y border-white/5 rotate-[-1deg] z-20">
+      <div className="absolute bottom-[50px] md:bottom-10 left-0 w-full overflow-hidden bg-black/50 py-4 border-y border-white/5 rotate-[-1deg] z-20" >
         <motion.div 
           animate={{ x: [0, -1500] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
