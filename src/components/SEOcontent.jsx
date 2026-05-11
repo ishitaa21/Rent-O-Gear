@@ -29,6 +29,7 @@ const SEOContent = () => {
       links: [
         { name: "Kolkata to Digha",  },
         { name: "Kolkata to Guwahati",  },
+        { name: "Ladakh Circuit",  },
         { name: "Mandarmani Coastal Ride",  },
         { name: "North Bengal Trails",  },
         { name: "Sikkim Expeditions",  }

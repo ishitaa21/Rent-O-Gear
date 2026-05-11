@@ -16,18 +16,7 @@ export const products = [
         brand: "Solace",
         
       },
-      {
-        id: "103",
-        image: "/product/jackets/jacket3.jpeg",
-        brand: "Steelbird",
-        
-      },
-      {
-        id: "104",
-        image: "/product/jackets/jacket4.jpeg",
-        brand: "Steelbird",
-        
-      },
+      
       {
         id: "105",
         image: "/product/jackets/jacket5.jpeg",
@@ -117,7 +106,7 @@ export const products = [
   },
   {
     id: 4,
-    name: "Saddlebags",
+    name: "Luggage Accessories",
     category: "Riding",
     items: [
       {
@@ -137,18 +126,8 @@ export const products = [
         brand: "Steelbird",
         
       },
-      {
-        id: "404",
-        image: "/product/bags/bag4.jpeg",
-        brand: "Steelbird",
-        
-      },
-      {
-        id: "405",
-        image: "/product/bags/bag5.jpeg",
-        brand: "Steelbird",
-        
-      },
+      
+      
       {
         id: "406",
         image: "/product/bags/bag6.jpeg",
@@ -188,11 +167,29 @@ export const products = [
         brand: "Steelbird",
         
       }, 
+      {
+        id: "504",
+        image: "/product/bags/bag4.jpeg",
+        brand: "Steelbird",
+        
+      }, 
+      {
+        id: "505",
+        image: "/product/jackets/jacket3.jpeg",
+        brand: "Steelbird",
+        
+      },
+      {
+        id: "506",
+        image: "/product/jackets/jacket4.jpeg",
+        brand: "Steelbird",
+        
+      },
     ],
   },
   {
     id: 6,
-    name: "Cameras",
+    name: "Cameras and accessories",
     category: "Camera",
     items: [
       {

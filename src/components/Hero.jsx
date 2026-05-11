@@ -7,7 +7,7 @@ const Hero = () => {
   
   const locations = [
     "LEH LADAKH", "SIKKIM", "DARJEELING", "SANDAKPHU", "BHUTAN", 
-    "DIGHA", "MANDARMANI", "NORTH BENGAL", "TAWANG"
+    "DIGHA", "MANDARMANI", "NORTH BENGAL", "TAWANG", "Uttarakhand", "Andhra Pradesh", "Kerala", "Vizag", "Chennai"
   ];
 
   return (
@@ -108,19 +108,34 @@ const Hero = () => {
 
       {/* --- SCROLLING MARQUEE --- */}
       {/* CHANGE: Changed bottom-4 to bottom-0 on mobile to pull it up as much as possible */}
-      <div className="absolute bottom-[50px] md:bottom-10 left-0 w-full overflow-hidden bg-black/50 py-4 border-y border-white/5 rotate-[-1deg] z-20" >
-        <motion.div 
-          animate={{ x: [0, -1500] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap gap-8 md:gap-12"
-        >
-          {[...locations, ...locations, ...locations].map((loc, i) => (
-            <span key={i} className="text-gray-800 text-3xl md:text-6xl font-black uppercase tracking-tighter opacity-40 md:opacity-30 hover:opacity-100 transition-opacity cursor-default">
-              {loc} <span className="text-yellow-400 ml-8 md:ml-12">•</span>
-            </span>
-          ))}
-        </motion.div>
-      </div>
+     {/* --- SCROLLING MARQUEE --- */}
+<div className="absolute bottom-[50px] md:bottom-10 left-0 w-full overflow-hidden bg-black/50 py-4 border-y border-white/5 rotate-[-1deg] z-20">
+  <motion.div 
+    /* CRITICAL CHANGE: 
+       We animate to -50% because we have two sets of the list. 
+       Once the first half (-50%) is done, it snaps back to 0% 
+       instantly and looks like a never-ending loop.
+    */
+    animate={{ x: ["0%", "-50%"] }} 
+    transition={{ 
+      duration: 35, // Adjust this number to change speed (higher = slower)
+      repeat: Infinity, 
+      ease: "linear" 
+    }}
+    /* Added w-max to ensure the flex container doesn't shrink to screen width */
+    className="flex whitespace-nowrap gap-8 md:gap-12 w-max"
+  >
+    {/* Just two spreads are perfect for the -50% logic */}
+    {[...locations, ...locations].map((loc, i) => (
+      <span 
+        key={i} 
+        className="text-zinc-1000 text-3xl md:text-6xl font-black uppercase tracking-tighter opacity-40 hover:opacity-100 transition-opacity cursor-default inline-block"
+      >
+        {loc} <span className="text-yellow-400 ml-8 md:ml-12">•</span>
+      </span>
+    ))}
+  </motion.div>
+</div>
     </div>
   );
 };
