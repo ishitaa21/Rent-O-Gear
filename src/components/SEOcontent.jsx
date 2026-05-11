@@ -27,11 +27,11 @@ const SEOContent = () => {
     {
       title: "Ride Destinations",
       links: [
-        { name: "Kolkata to Digha", path: "/work" },
-        { name: "Kolkata to Guwahati", path: "/work" },
-        { name: "Mandarmani Coastal Ride", path: "/work" },
-        { name: "North Bengal Trails", path: "/work" },
-        { name: "Sikkim Expeditions", path: "/work" }
+        { name: "Kolkata to Digha",  },
+        { name: "Kolkata to Guwahati",  },
+        { name: "Mandarmani Coastal Ride",  },
+        { name: "North Bengal Trails",  },
+        { name: "Sikkim Expeditions",  }
       ]
     }
   ];
