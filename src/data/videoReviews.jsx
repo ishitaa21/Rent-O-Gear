@@ -14,4 +14,29 @@ export const videoReviews = [
     name: "esha",
     video: "/videos/review3.mp4",
   },
+  {
+    id: 4,
+    name: "esha",
+    video: "/videos/review4.mp4",
+  },
+  {
+    id: 5,
+    name: "esha",
+    video: "/videos/review5.mp4",
+  },
+  {
+    id: 6,
+    name: "esha",
+    video: "/videos/review6.mp4",
+  },
+  {
+    id: 7,
+    name: "esha",
+    video: "/videos/review7.mp4",
+  },
+  {
+    id: 8,
+    name: "esha",
+    video: "/videos/review8.mp4",
+  },
 ];

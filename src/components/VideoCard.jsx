@@ -1,18 +1,26 @@
 const VideoCard = ({ review }) => {
   return (
-    <div className="bg-gray-900 p-4 rounded-xl shadow-md">
+    
+    /* break-inside-avoid is essential for the masonry layout */
+    <div className="break-inside-avoid mb-5 bg-zinc-900 rounded-xl overflow-hidden border border-white/5 shadow-lg transition-all duration-500 hover:scale-[1.02] group">
       
-      <video
-        controls
-        className="w-full  rounded-lg"
-      >
-        <source src={review.video} type="video/mp4" />
-      </video>
+      <div className="relative">
+        <video
+          controls
+          className="w-full h-auto block grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+        >
+          <source src={review.video} type="video/mp4" />
+        </video>
+      </div>
 
-      <h3 className="text-yellow-400 mt-3 font-semibold text-center">
-        — {review.name}
-      </h3>
+      <div className="py-2 bg-zinc-900">
+        <p className="text-gray-500 text-[9px] text-center uppercase tracking-[0.25em] font-bold">
+          Verified Rider
+        </p>
+      </div>
+      
     </div>
+    
   );
 };
 
