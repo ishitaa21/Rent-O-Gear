@@ -10,7 +10,8 @@ const SEOContent = () => {
         { name: "Our Gear", path: "/products" },
         { name: "How it Works", path: "/work" },
         { name: "About Us", path: "/about" },
-        { name: "Contact", path: "/contact" }
+        { name: "Contact", path: "/contact" },
+        { name: "Terms & Conditions", path: "/terms/TERMS AND CONDITIONS.pdf" , isFile: true },
       ]
     },
     {
@@ -62,15 +63,26 @@ const SEOContent = () => {
               <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">
                 {column.title}
               </h3>
-              <ul className="space-y-4">
+             <ul className="space-y-4">
                 {column.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
-                    <Link 
-                      to={link.path} 
-                      className="text-gray-500 hover:text-yellow-400 text-xs transition-colors duration-300"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.isFile ? (
+                      <a 
+                        href={link.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-500 hover:text-yellow-400 text-xs transition-colors duration-300"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link 
+                        to={link.path || "/"} 
+                        className="text-gray-500 hover:text-yellow-400 text-xs transition-colors duration-300"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

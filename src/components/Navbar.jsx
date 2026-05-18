@@ -37,9 +37,15 @@ const Navbar = () => {
           <Link title="Gear" to="/products" className="hover:text-yellow-400">Gear</Link>
           <Link title="Work" to="/work" className="hover:text-yellow-400">How we Work</Link>
           <Link title="About" to="/about" className="hover:text-yellow-400">About Us</Link>
-          
           <Link title="Gallery" to="/gallery" className="hover:text-yellow-400">Gallery</Link>
-          
+         <a 
+         href="/terms/TERMS AND CONDITIONS.pdf" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         className="hover:text-yellow-400"
+         >
+           Terms
+         </a>
 
           {/* <a
             href="https://wa.me/919123894013"
@@ -65,9 +71,15 @@ const Navbar = () => {
           <Link title="Gear" to="/products" className="hover:text-yellow-400" onClick={closeMenu}>Gear</Link>
           <Link title="Work" to="/work" className="hover:text-yellow-400" onClick={closeMenu}>How we Work</Link>
           <Link title="About" to="/about" className="hover:text-yellow-400" onClick={closeMenu} >About Us</Link>
-          
           <Link title="Gallery" to="/gallery" className="hover:text-yellow-400" onClick={closeMenu} >Gallery</Link>
-
+          <a 
+         href="/terms/TERMS AND CONDITIONS.pdf" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         className="hover:text-yellow-400"
+         >
+           Terms and Conditions
+         </a>
           
         </div>
       )}
