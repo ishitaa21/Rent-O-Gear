@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProductModal from "./ProductModal";
-import ProductCard from "./ProductCard"; // Ensure this is imported
+import ProductCard from "./ProductCard"; 
 import { products } from "../data/products";
 
 const Products = () => {

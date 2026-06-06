@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Assumes you are using react-router-dom
+import { Link } from 'react-router-dom';
 
 const SEOContent = () => {
+  const currentYear = new Date().getFullYear();
+
   const footerLinks = [
     {
       title: "Quick Links",
@@ -11,29 +13,29 @@ const SEOContent = () => {
         { name: "How it Works", path: "/work" },
         { name: "About Us", path: "/about" },
         { name: "Contact", path: "/contact" },
-        { name: "Terms & Conditions", path: "/terms/TERMS AND CONDITIONS.pdf" , isFile: true },
+        { name: "Terms & Conditions", path: "/terms/TERMS AND CONDITIONS.pdf", isFile: true },
       ]
     },
     {
       title: "Popular Gear",
       links: [
-        { name: "Shoes", path: "/products" },
-        { name: "Riding Jackets and Pants", path: "/products" },
-        { name: "Saddlebags", path: "/products" },
-        { name: "Action Cameras", path: "/products" },
-        { name: "Gloves & Knee Guards", path: "/products" },
-        { name: "Trekking Essentials", path: "/products" }
+        { name: "Shoes", path: "/products?category=shoes" },
+        { name: "Riding Jackets and Pants", path: "/products?category=apparel" },
+        { name: "Saddlebags", path: "/products?category=bags" },
+        { name: "Action Cameras", path: "/products?category=electronics" },
+        { name: "Gloves & Knee Guards", path: "/products?category=protection" },
+        { name: "Trekking Essentials", path: "/products?category=trekking" }
       ]
     },
     {
       title: "Ride Destinations",
       links: [
-        { name: "Kolkata to Digha",  },
-        { name: "Kolkata to Guwahati",  },
-        { name: "Ladakh Circuit",  },
-        { name: "Mandarmani Coastal Ride",  },
-        { name: "North Bengal Trails",  },
-        { name: "Sikkim Expeditions",  }
+        { name: "Kolkata to Digha", path: "/products?search=digha" },
+        { name: "Kolkata to Guwahati", path: "/products?search=guwahati" },
+        { name: "Ladakh Circuit", path: "/products?search=ladakh" },
+        { name: "Mandarmani Coastal Ride", path: "/products?search=mandarmani" },
+        { name: "North Bengal Trails", path: "/products?search=north-bengal" },
+        { name: "Sikkim Expeditions", path: "/products?search=sikkim" }
       ]
     }
   ];
@@ -63,7 +65,7 @@ const SEOContent = () => {
               <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">
                 {column.title}
               </h3>
-             <ul className="space-y-4">
+              <ul className="space-y-4">
                 {column.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
                     {link.isFile ? (
@@ -77,7 +79,7 @@ const SEOContent = () => {
                       </a>
                     ) : (
                       <Link 
-                        to={link.path || "/"} 
+                        to={link.path} 
                         className="text-gray-500 hover:text-yellow-400 text-xs transition-colors duration-300"
                       >
                         {link.name}
@@ -90,12 +92,14 @@ const SEOContent = () => {
           ))}
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 text-center">
-          <p className="text-gray-600 text-[10px] uppercase tracking-[0.2em]">
-            © 2026 Rent O Gear Kolkata. All Roads Lead To Adventure.
+        {/* Bottom Bar Container */}
+        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-gray-600 text-[10px] uppercase tracking-[0.2em] text-center sm:text-left">
+            © {currentYear} Rent O Gear Kolkata. All Roads Lead To Adventure.
           </p>
-          <p className="text-gray-600 text-[10px] text-right">Made with ♡ in Kolkata!</p>
+          <p className="text-gray-600 text-[10px] tracking-wide">
+            Made with ♡ in Kolkata
+          </p>
         </div>
         
       </div>
