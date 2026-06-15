@@ -112,7 +112,7 @@ export const products = [
       {
         id: "401",
         image: "/product/bags/bag1.jpeg",
-        brand: "Steelbird",
+        brand: "Biking Brotherhood",
         
       },
       {
@@ -123,7 +123,7 @@ export const products = [
       {
         id: "403",
         image: "/product/bags/bag3.jpeg",
-        brand: "Steelbird",
+        brand: "Solace",
         
       },
       
@@ -131,13 +131,13 @@ export const products = [
       {
         id: "406",
         image: "/product/bags/bag6.jpeg",
-        brand: "Steelbird",
+        brand: "Guardian Gears",
         
       },
       {
         id: "407",
         image: "/product/bags/bag7.jpeg",
-        brand: "Steelbird",
+        brand: "Rynox",
         
       },
     ],
@@ -152,37 +152,37 @@ export const products = [
       {
         id: "501",
         image: "/product/trek/tent1close.jpeg",
-        brand: "Steelbird",
+        brand: "Quechua",
        
       },
       {
         id: "502",
         image: "/product/trek/torch1.jpeg",
-        brand: "Steelbird",
+        brand: "Forclaz by Decathlon",
         
       },
       {
         id: "503",
         image: "/product/bags/bag5.jpeg",
-        brand: "Steelbird",
+        brand: "Decathlon"
         
       }, 
       {
         id: "504",
         image: "/product/bags/bag4.jpeg",
-        brand: "Steelbird",
+        brand: "Forclaz by Decathlon",
         
       }, 
       {
         id: "505",
         image: "/product/jackets/jacket3.jpeg",
-        brand: "Steelbird",
+        brand: "Decathlon",
         
       },
       {
         id: "506",
         image: "/product/jackets/jacket4.jpeg",
-        brand: "Steelbird",
+        brand: "Quechua",
         
       },
     ],
