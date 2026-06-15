@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useCart } from "../context/CartContext";
 
 const ImageGallery = ({ item }) => {
   const [index, setIndex] = useState(0);
@@ -12,7 +11,7 @@ const ImageGallery = ({ item }) => {
     <div className="relative group">
       <img
         src={currentImage}
-        className="w-full h-52 object-contain bg-white rounded-md p-2"
+        className="w-full h-50 object-cover rounded-md"
         alt={item.brand}
       />
       
@@ -44,137 +43,38 @@ const ImageGallery = ({ item }) => {
 const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
 
-  const { addToCart } = useCart();
-  
-  // Track configurations individually for each sub-item using its unique ID string
-  const [itemConfigurations, setItemConfigurations] = useState({});
-
-  const handleConfigChange = (itemId, key, value) => {
-    setItemConfigurations((prev) => ({
-      ...prev,
-      [itemId]: {
-        ...prev[itemId],
-        [key]: value,
-      },
-    }));
-  };
-
-  const sizesList = ["S", "M", "L", "XL", "XXL"];
-
-  const handleAddClick = (item) => {
-    const config = itemConfigurations[item.id];
-    
-    // Safety guard to make sure users can't add an incomplete choice
-    if (!config?.size || !config?.startDate || !config?.endDate) {
-      alert("Please specify a valid Size, Start Date, and End Date first.");
-      return;
-    }
-
-    // CRASH-PROOF PRICE EXTRACTION: Checks if item.price exists, otherwise defaults to 250
-    const numericPrice = item.price 
-      ? parseInt(item.price.replace(/[^0-9]/g, ""), 10) 
-      : 250;
-
-    addToCart({
-      id: item.id,
-      parentCategory: product.name,
-      brand: item.brand,
-      image: item.image || item.images?.[0],
-      pricePerDay: numericPrice,
-      size: config.size,
-      startDate: config.startDate,
-      endDate: config.endDate,
-    });
-
-    alert(`${product.name} (${item.brand}) added to your rental cart!`);
+  const handleWhatsApp = (item) => {
+    const message = `Hi, I want to rent ${product.name} (${item.brand}). Is it available?`;
+    window.open(`https://wa.me/919123894013?text=${encodeURIComponent(message)}`);
   };
 
   return (
-    <div className="fixed inset-0 bg-black/85 flex justify-center items-center z-50 p-4 backdrop-blur-sm">
-      <div className="bg-gray-900 rounded-xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/5">
-        <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-3">
-          <h2 className="text-2xl font-bold text-yellow-400">{product.name}</h2>
-          <button onClick={onClose} className="text-3xl text-gray-400 hover:text-white transition">&times;</button>
+    <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 p-4">
+      <div className="bg-gray-900 rounded-xl p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold text-white">{product.name}</h2>
+          <button onClick={onClose} className="text-2xl text-gray-400 hover:text-white">&times;</button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {product.items.map((item) => {
-            const currentConfig = itemConfigurations[item.id] || {};
-            const isConfigComplete = currentConfig.size && currentConfig.startDate && currentConfig.endDate;
-
-            return (
-              <div key={item.id} className="bg-gray-800/50 p-4 rounded-xl border border-gray-700/50 flex flex-col justify-between">
-                <div>
-                  <ImageGallery item={item} />
-                  
-                  <div className="mt-4 space-y-4">
-                    <div className="flex justify-between items-baseline">
-                      <p className="text-lg font-semibold text-white">{item.brand}</p>
-                      <p className="text-yellow-400 font-bold text-lg">{item.price || "₹250/day"}</p>
-                    </div>
-
-                    {/* Size Selector System */}
-                    <div>
-                      <p className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-2 text-left">Select Size</p>
-                      <div className="flex gap-1.5 flex-wrap">
-                        {sizesList.map((sz) => (
-                          <button
-                            key={sz}
-                            type="button"
-                            onClick={() => handleConfigChange(item.id, "size", sz)}
-                            className={`w-9 h-9 rounded-md text-xs font-bold transition border ${
-                              currentConfig.size === sz
-                                ? "bg-yellow-400 text-black border-yellow-400"
-                                : "bg-gray-900 text-white border-gray-700 hover:border-yellow-400"
-                            }`}
-                          >
-                            {sz}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Rental Date Window Selectors */}
-                    <div className="grid grid-cols-2 gap-2 text-left">
-                      <div>
-                        <p className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">From</p>
-                        <input
-                          type="date"
-                          min={new Date().toISOString().split("T")[0]}
-                          value={currentConfig.startDate || ""}
-                          onChange={(e) => handleConfigChange(item.id, "startDate", e.target.value)}
-                          className="w-full bg-gray-900 border border-gray-700 rounded p-2 text-xs focus:outline-none focus:border-yellow-400 text-white"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">To</p>
-                        <input
-                          type="date"
-                          min={currentConfig.startDate || new Date().toISOString().split("T")[0]}
-                          value={currentConfig.endDate || ""}
-                          onChange={(e) => handleConfigChange(item.id, "endDate", e.target.value)}
-                          className="w-full bg-gray-900 border border-gray-700 rounded p-2 text-xs focus:outline-none focus:border-yellow-400 text-white"
-                        />
-                      </div>
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {product.items.map((item) => (
+            <div key={item.id} className="bg-gray-800 p-3 rounded-lg border border-gray-700 flex flex-col justify-between">
+              <div>
+                <ImageGallery item={item} />
+                <div className="mt-2 text-sm text-left">
+                  <p className="text-white"><strong>Brand:</strong> {item.brand}</p>
+                  {/* Pricing line has been removed completely from here */}
                 </div>
-
-                {/* Interactive Dynamic Form Button */}
-                <button
-                  type="button"
-                  onClick={() => handleAddClick(item)}
-                  className={`mt-5 w-full py-3 rounded-lg font-bold transition uppercase text-xs tracking-wider ${
-                    isConfigComplete
-                      ? "bg-yellow-400 text-black hover:bg-yellow-500"
-                      : "bg-gray-700 text-gray-400 cursor-not-allowed"
-                  }`}
-                >
-                  {isConfigComplete ? "Add to Cart" : "Select Options"}
-                </button>
               </div>
-            );
-          })}
+
+              <button
+                onClick={() => handleWhatsApp(item)}
+                className="mt-3 w-full bg-yellow-400 text-black py-2 rounded font-semibold hover:bg-yellow-500 transition"
+              >
+                Enquire
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
